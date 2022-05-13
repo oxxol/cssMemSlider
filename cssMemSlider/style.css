@@ -15,7 +15,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   align-items: center;
   background-color: #1a191f;
   overflow-y: hidden;
@@ -23,14 +22,13 @@ body {
 }
 
 .wrapper {
-  /* position: relative; */
-  width: 80%;
+  width: 90%;
   max-width: 45rem;
-  /* height: 100vh; */
   padding: 0 1.5rem;
   margin: auto auto;
   box-shadow: 0 0.125rem 0.5rem 0.125rem rgb(0 0 0 / 50%);
 }
+
 h1 {
   font-family: "CyrillicGoth";
   font-weight: 400;
@@ -38,52 +36,51 @@ h1 {
   font-size: 3rem;
   color: #fff;
   letter-spacing: 0.06em;
-  max-width: 40rem;
   margin: 1rem auto;
 }
+
 .slider {
-  /* position: relative; */
   overflow: hidden;
   margin: 0 auto;
   max-width: 40rem;
 }
+
 .slider-items {
   width: 500%;
   height: 100%;
   margin: 0 auto;
   display: flex;
+  transition: all 0.5s ease;
 }
 .slider-item {
   width: 20%;
-  transition: 0.5s;
-  /* background-size: cover; */
 }
+
 .slider-item > img {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .slider-content {
   display: flex;
   justify-content: space-between;
   margin: 1rem auto;
 }
+
 input {
-  /* position: absolute; */
   display: inline;
   visibility: hidden;
   width: 0;
   height: 0;
 }
+
 .slider-navigation {
-  /* position: absolute; */
-  /* bottom: 2rem; */
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* margin: 0.5rem; */
-  /* gap: 1.5rem; */
 }
+
 label {
   width: 2.2rem;
   height: 2.2rem;
@@ -98,12 +95,11 @@ label {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-
-  /* cursor: pointer; */
   background-color: #e44b43;
   border: solid #e44b43;
   transition: all 0.5s ease;
 }
+
 #r1:checked ~ .wrapper label[for="r1"] .slider-navigation-item,
 #r2:checked ~ .wrapper label[for="r2"] .slider-navigation-item,
 #r3:checked ~ .wrapper label[for="r3"] .slider-navigation-item,
@@ -123,35 +119,39 @@ label {
   border: solid #ffffff;
   background-color: #ffffff;
 }
-/* .slider-navigation-item:checked {
-  background-color: transparent;
-} */
 
-#r1:checked ~ .wrapper .s1 {
-  margin-left: 0;
+#r1:checked ~ .wrapper .slider-items {
+  transform: translateX(0%);
 }
-#r2:checked ~ .wrapper .s1 {
-  margin-left: -20%;
+
+#r2:checked ~ .wrapper .slider-items {
+  transform: translateX(-20%);
 }
-#r3:checked ~ .wrapper .s1 {
-  margin-left: -40%;
+
+#r3:checked ~ .wrapper .slider-items {
+  transform: translateX(-40%);
 }
-#r4:checked ~ .wrapper .s1 {
-  margin-left: -60%;
+
+#r4:checked ~ .wrapper .slider-items {
+  transform: translateX(-60%);
 }
-#r5:checked ~ .wrapper .s1 {
-  margin-left: -80%;
+
+#r5:checked ~ .wrapper .slider-items {
+  transform: translateX(-80%);
 }
+
 .slider-descriptions-wrapper {
   overflow: hidden;
   max-width: 25rem;
 }
+
 .slider-descriptions {
   display: flex;
   align-items: center;
 
   width: 500%;
 }
+
 p {
   width: 20%;
   font-family: "CyrillicGoth";
@@ -161,10 +161,10 @@ p {
   font-size: 1.2rem;
   letter-spacing: 0.06em;
   transition: all 0.5s ease;
-  /* transform: scale(0); */
   opacity: 0;
   margin-left: 0;
 }
+
 .d2,
 .d3,
 .d4,
@@ -180,35 +180,34 @@ p {
   opacity: 1;
 }
 
-/* .footer-wrapper {
-  max-width: 60%;
-  margin: 0 auto;
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .slider-content {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+  .slider-descriptions-wrapper {
+    max-width: 100%;
+  }
+  .slider-navigation {
+    justify-content: center;
+  }
 }
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 100%;
-  max-height: 4rem;
-  margin: 1rem;
+@media (max-width: 425px) {
+  label {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .slider-navigation-item {
+    width: 1rem;
+    height: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
 }
-.link-github,
-span {
-  display: block;
-  text-decoration: none;
-  font-family: "CyrillicGoth";
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.06em;
-}
-.link-rsschool {
-  display: block;
-  text-decoration: none;
-  width: 7rem;
-  height: 2rem;
-  background-image: url(./assets/svg/rsschool.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-} */
