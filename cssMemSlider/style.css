@@ -12,18 +12,15 @@
 }
 
 body {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #1a191f;
-  overflow-y: hidden;
+  background-color: #27262b;
   height: 100vh;
 }
 
 .wrapper {
-  width: 90%;
-  max-width: 45rem;
+  max-width: 90vh;
   padding: 0 1.5rem;
   margin: auto auto;
   box-shadow: 0 0.125rem 0.5rem 0.125rem rgb(0 0 0 / 50%);
@@ -42,14 +39,13 @@ h1 {
 .slider {
   overflow: hidden;
   margin: 0 auto;
-  max-width: 40rem;
 }
 
 .slider-items {
+  display: flex;
   width: 500%;
   height: 100%;
   margin: 0 auto;
-  display: flex;
   transition: all 0.5s ease;
 }
 .slider-item {
@@ -96,7 +92,7 @@ label {
   height: 1.2rem;
   border-radius: 50%;
   background-color: #e44b43;
-  border: solid #e44b43;
+  border: solid 0.12rem #e44b43;
   transition: all 0.5s ease;
 }
 
@@ -109,14 +105,15 @@ label {
 }
 
 .slider-navigation-item:hover {
-  border: solid #ffffff;
+  border: solid 0.12rem #ffffff;
   transform: scale(1.1);
   background-color: #ffffff;
 }
 
 .slider-navigation-item:active {
   transform: scale(0.9);
-  border: solid #ffffff;
+  opacity: 0.5;
+  border: solid 0.12rem #ffffff;
   background-color: #ffffff;
 }
 
@@ -148,7 +145,6 @@ label {
 .slider-descriptions {
   display: flex;
   align-items: center;
-
   width: 500%;
 }
 
@@ -162,7 +158,6 @@ p {
   letter-spacing: 0.06em;
   transition: all 0.5s ease;
   opacity: 0;
-  margin-left: 0;
 }
 
 .d2,
@@ -181,33 +176,45 @@ p {
 }
 
 @media (max-width: 767px) {
+  .wrapper {
+    width: calc(100% - 2rem);
+    margin: auto 1rem;
+    padding: 0 1rem;
+  }
+
   h1 {
     font-size: 2rem;
   }
+
   .slider-content {
     flex-direction: column-reverse;
     gap: 1rem;
   }
+
   .slider-descriptions-wrapper {
     max-width: 100%;
   }
+
   .slider-navigation {
     justify-content: center;
   }
 }
 @media (max-width: 425px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
   label {
     width: 1.8rem;
     height: 1.8rem;
   }
+
   .slider-navigation-item {
     width: 1rem;
     height: 1rem;
-  }
-  h1 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1rem;
   }
 }
