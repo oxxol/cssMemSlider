@@ -1,0 +1,219 @@
+@font-face {
+  font-family: "CyrillicGoth";
+  src: url("./assets/fonts/cyrillicgoth.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #27262b;
+  height: 100vh;
+}
+
+.wrapper {
+  max-width: 90vh;
+  padding: 0 1.5rem;
+  margin: auto auto;
+  box-shadow: 0 0.125rem 0.5rem 0.125rem rgb(0 0 0 / 50%);
+}
+
+h1 {
+  font-family: "CyrillicGoth";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 0.06em;
+  margin: 1rem auto;
+}
+
+.slider {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.slider-items {
+  display: flex;
+  width: 500%;
+  height: 100%;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+.slider-item {
+  width: 20%;
+}
+
+.slider-item > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.slider-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+}
+
+input {
+  display: inline;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.slider-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+label {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.slider-navigation-item {
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #e44b43;
+  border: solid 0.12rem #e44b43;
+  transition: all 0.5s ease;
+}
+
+#r1:checked ~ .wrapper label[for="r1"] .slider-navigation-item,
+#r2:checked ~ .wrapper label[for="r2"] .slider-navigation-item,
+#r3:checked ~ .wrapper label[for="r3"] .slider-navigation-item,
+#r4:checked ~ .wrapper label[for="r4"] .slider-navigation-item,
+#r5:checked ~ .wrapper label[for="r5"] .slider-navigation-item {
+  background-color: transparent;
+}
+label:hover .slider-navigation-item {
+  border: solid 0.12rem #ffffff;
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
+
+label:active .slider-navigation-item {
+  transform: scale(0.9);
+  opacity: 0.5;
+  border: solid 0.12rem #ffffff;
+  background-color: #ffffff;
+}
+
+#r1:checked ~ .wrapper .slider-items {
+  transform: translateX(0%);
+}
+
+#r2:checked ~ .wrapper .slider-items {
+  transform: translateX(-20%);
+}
+
+#r3:checked ~ .wrapper .slider-items {
+  transform: translateX(-40%);
+}
+
+#r4:checked ~ .wrapper .slider-items {
+  transform: translateX(-60%);
+}
+
+#r5:checked ~ .wrapper .slider-items {
+  transform: translateX(-80%);
+}
+
+.slider-descriptions-wrapper {
+  overflow: hidden;
+  max-width: 25rem;
+}
+
+.slider-descriptions {
+  display: flex;
+  align-items: center;
+  width: 500%;
+}
+
+p {
+  width: 20%;
+  font-family: "CyrillicGoth";
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.d2,
+.d3,
+.d4,
+.d5 {
+  margin-left: -20%;
+}
+
+#r1:checked ~ .wrapper .d1,
+#r2:checked ~ .wrapper .d2,
+#r3:checked ~ .wrapper .d3,
+#r4:checked ~ .wrapper .d4,
+#r5:checked ~ .wrapper .d5 {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .wrapper {
+    width: calc(100% - 2rem);
+    margin: auto 1rem;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .slider-content {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .slider-descriptions-wrapper {
+    max-width: 100%;
+  }
+
+  .slider-navigation {
+    justify-content: center;
+  }
+}
+@media (max-width: 425px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  label {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .slider-navigation-item {
+    width: 1rem;
+    height: 1rem;
+  }
+}
