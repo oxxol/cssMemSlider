@@ -103,14 +103,13 @@ label {
 #r5:checked ~ .wrapper label[for="r5"] .slider-navigation-item {
   background-color: transparent;
 }
-
-.slider-navigation-item:hover {
+label:hover .slider-navigation-item {
   border: solid 0.12rem #ffffff;
   transform: scale(1.1);
   background-color: #ffffff;
 }
 
-.slider-navigation-item:active {
+label:active .slider-navigation-item {
   transform: scale(0.9);
   opacity: 0.5;
   border: solid 0.12rem #ffffff;
